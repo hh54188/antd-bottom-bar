@@ -1,0 +1,39 @@
+@overlayAnimationName: BottomBar__overlay--animation;
+
+.@{overlayAnimationName}-enter {
+  opacity: 0.01;
+}
+
+.@{overlayAnimationName}-enter.@{overlayAnimationName}-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-out;
+}
+
+.@{overlayAnimationName}-leave {
+  opacity: 1;
+}
+
+.@{overlayAnimationName}-leave.@{overlayAnimationName}-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-out;
+}
+
+@barAnimationName: BottomBar__bar--animation;
+
+.@{barAnimationName}-enter {
+  transform: translateY(100%);
+}
+
+.@{barAnimationName}-enter.@{barAnimationName}-enter-active {
+  transform: translateY(0%);
+  transition: all 300ms ease-out;
+}
+
+.@{barAnimationName}-leave {
+  transform: translateY(0%);
+}
+
+.@{barAnimationName}-leave.@{barAnimationName}-leave-active {
+  transform: translateY(100%);
+  transition: all 300ms ease-out;
+}

@@ -25,7 +25,7 @@ class BottomBar extends React.Component {
     onClose()
   }
   render() {
-    const {show, children} = this.props
+    const {show, children, onClose} = this.props
     return (
       <div className="BottomBar BottomBar__contaienr">
         <ReactCSSTransitionGroup
@@ -47,11 +47,13 @@ class BottomBar extends React.Component {
         >
           {show && (
             <div className="BottomBar__bar">
-              <Icon
-                onClick={this.closeClickHandler}
-                className="BottomBar__bar__closeBtn"
-                type="close"
-              />
+              {onClose && (
+                <Icon
+                  onClick={this.closeClickHandler}
+                  className="BottomBar__bar__closeBtn"
+                  type="close"
+                />
+              )}
               {children}
             </div>
           )}

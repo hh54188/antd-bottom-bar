@@ -3,9 +3,10 @@ import React from 'react'
 import './index.less'
 
 import BottomBar from '../BottomBar'
-import Reload from '../BottomBar/components/Reload'
-import ToIndex from '../BottomBar/components/ToIndex'
-import RedirectTo from '../BottomBar/components/RedirectTo'
+import ErrorBottomBar from '../BottomBar/components/ErrorBottomBar'
+import ReloadBottomBar from '../BottomBar/components/ReloadBottomBar'
+import ToIndexBottomBar from '../BottomBar/components/ToIndexBottomBar'
+import RedirectToBottomBar from '../BottomBar/components/RedirectToBottomBar'
 
 class App extends React.Component {
   constructor(props) {
@@ -25,15 +26,9 @@ class App extends React.Component {
     return (
       <div>
         <button onClick={this.toggleHandler}>Toggle</button>
-        <BottomBar
-          onOverlayClick={this.toggleHandler}
-          onClose={this.toggleHandler}
-          show={show}
-        >
-          {/* <Reload /> */}
-          {/* <ToIndex /> */}
-          <RedirectTo title="测试页面" href="/test" />
-        </BottomBar>
+        <ErrorBottomBar show={show} onClose={this.toggleHandler} />
+        {/* <ReloadBottomBar show={show} onClose={this.toggleHandler} /> */}
+        {/* <ToIndexBottomBar show={show} onClose={this.toggleHandler} /> */}
       </div>
     )
   }

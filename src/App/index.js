@@ -4,6 +4,7 @@ import './index.less'
 
 import BottomBar from '../BottomBar'
 import ErrorBottomBar from '../BottomBar/components/ErrorBottomBar'
+import LoadingBottomBar from '../BottomBar/components/LoadingBottomBar'
 import ReloadBottomBar from '../BottomBar/components/ReloadBottomBar'
 import ToIndexBottomBar from '../BottomBar/components/ToIndexBottomBar'
 import RedirectToBottomBar from '../BottomBar/components/RedirectToBottomBar'
@@ -26,7 +27,12 @@ class App extends React.Component {
     return (
       <div>
         <button onClick={this.toggleHandler}>Toggle</button>
-        <ErrorBottomBar show={show} onClose={this.toggleHandler} />
+        <LoadingBottomBar show={show} />
+        {/* <ErrorBottomBar
+          error="zhihu"
+          show={show}
+          onClose={this.toggleHandler}
+        /> */}
         {/* <ReloadBottomBar show={show} onClose={this.toggleHandler} /> */}
         {/* <ToIndexBottomBar show={show} onClose={this.toggleHandler} /> */}
       </div>
